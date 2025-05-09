@@ -13,3 +13,10 @@
  */
 var nombre = "Santiago";
 console.log("Hola," + nombre);
+/**
+ * Siguiendo con las comparaciones con Python, es muy parecido al f´string de Python.
+ * En Python, puedes usar f-strings para incrustar expresiones dentro de cadenas de texto.
+ * Esto se hace colocando una "f" antes de la cadena y usando llaves para delimitar las expresiones.
+ * En TypeScript, puedes usar plantillas de cadena (template strings) para hacer lo mismo.
+ */
+console.log("Hola, ".concat(nombre));
