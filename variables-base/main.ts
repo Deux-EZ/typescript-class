@@ -33,4 +33,41 @@ let edad: number = 30; // number
 let esDesarrollador: boolean = true; // boolean
 let mes: string | undefined 
 let variableNule: null = null; // null
-let simbolo: symbol = Symbol("Mi simbolo");
+// let simbolo: symbol = Symbol("Mi simbolo");
+
+/**
+ * Tenemos otros tipos de variables primitivas, como el tipo "any", que permite almacenar cualquier tipo de dato.
+ * Sin embargo, su uso no es recomendable, ya que anula las ventajas de TypeScript.
+ * En su lugar, es mejor usar tipos específicos o uniones de tipos.
+ * Por ejemplo, si quieres permitir que una variable pueda ser un número o una cadena, puedes usar el tipo "number | string".
+ * Esto significa que la variable puede ser un número o una cadena, pero no ambos al mismo tiempo.
+ * Esto es útil para la documentación y la verificación de tipos en tiempo de ejecución
+ */
+
+let variableDinamica: any = "Hola"; // any
+variableDinamica = 30; // Cambiamos el tipo a number
+variableDinamica = true; // Cambiamos el tipo a boolean
+variableDinamica = null; // Cambiamos el tipo a null
+variableDinamica = undefined; // Cambiamos el tipo a undefined
+
+/**
+ * Throws an error with a specified message and never returns.
+ *
+ * The `never` type in TypeScript is used to represent values that never occur.
+ * This is commonly used for functions that always throw an error or functions
+ * that never terminate (e.g., infinite loops). In this case, the `throwError`
+ * function is explicitly typed as `never` because it will always throw an error
+ * and will not return any value.
+ *
+ * @throws {Error} Always throws an error with the message "Soy un bug".
+ */
+
+function throwError(): never {
+    throw new Error("Soy un bug")
+}
+
+// console.log(throwError()) // Esto nunca se ejecutará
+
+function logError(): void {
+    console.log("Hola, soy un log");
+} 
